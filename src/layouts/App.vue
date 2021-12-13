@@ -1,16 +1,20 @@
 <template>
-<!--  <img alt="Vue logo" src="./assets/logo.png">-->
-  <bmi msg="Kalkulator BMI"/>
+  <div class="navbar d-flex justify-content-center">
+    <v-menu href="/bmi">Kalkulator BMI</v-menu>
+    <v-menu href="/exchange">Kursy Walut</v-menu>
+  </div>
+
+  <slot></slot>
 </template>
 
+
 <script>
-import bmi from './components/bmi.vue'
+import VMenu from '../components/menu.vue'
 
 export default {
-  name: 'App',
   components: {
-    bmi
-  },
+    VMenu
+  }
 }
 </script>
 
