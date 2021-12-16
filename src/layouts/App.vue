@@ -9,8 +9,7 @@
 
 
 <script>
-import VMenu from '../components/menu.vue'
-
+import VMenu from '../components/menu.vue';
 export default {
   components: {
     VMenu

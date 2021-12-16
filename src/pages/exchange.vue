@@ -1,14 +1,17 @@
 <template>
   <main-layout>
-    <p>exchange page.</p>
+    <exchange msg="Kurs walut"/>
   </main-layout>
 </template>
 
 <script>
-import MainLayout from '../layouts/App.vue'
+import MainLayout from '../layouts/App.vue';
+import exchange from '../components/exchange.vue';
+
 export default {
   components: {
-    MainLayout
+    MainLayout,
+    exchange
   }
 }
 </script>
