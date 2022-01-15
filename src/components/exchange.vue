@@ -94,7 +94,7 @@ export default {
     exchangeResult: function () {
       let found = {... this.currencies.find(currency => currency.code === this.currencyOut)};
 
-      return found.bid * this.value;//found.bid * this.target.value;
+      return this.value / found.bid;//found.bid * this.target.value;
     }
   },
   mounted () {
