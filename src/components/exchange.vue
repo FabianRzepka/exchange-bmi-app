@@ -8,7 +8,7 @@
           <div class="row">
             <div class="col-lg-6">
               <div class="form-floating mb-3">
-                <input :class="Validate.value ? ' is-invalid' : '' " type="number" min="0" step="0.01" v-model="value" class="form-control input-ds" id="value"  placeholder="Podaj kwotę...">
+                <input :class="Validate.valueError ? ' is-invalid' : '' " type="number" min="0" step="0.01" v-model="value" class="form-control input-ds" id="value"  placeholder="Podaj kwotę...">
                 <label for="value">Kwota (PLN)</label>
               </div>
             </div>
@@ -27,36 +27,8 @@
                 <label for="value">Wynik ({{ currencyOut }})</label>
               </div>
             </div>
-            <!-- <div class="col-lg-6">
-              <div class="form-floating mb-3">
-                <select :class="Validate.currencyInError ? ' is-invalid' : '' " class="form-control select" id="currency-in"  placeholder="Wybierz walutę...">
-                  <option v-for="currency in currencies" v-bind:value="currency.code" v-bind:key="currency.code" :selected="currencyOut === currency">{{currency.currency }}</option>
-                </select>
-                <label for="value">Waluta</label>
-              </div>
-            </div> -->
           </div>
         </div>
-        <!-- <div class="card-footer border-0 bg-gradient-dark py-3 text-white d-flex align-items-center justify-content-center" style="height: 92px;">
-
-            <div v-if="bmiCalculation.value && !Validate.weightError && !Validate.heightError" class="d-flex flex-row justify-content-between w-100">
-              <div class="d-flex flex-column align-items-start">
-                <div>
-                  Twój wynik:
-                </div>
-                <div class="fw-bolder fs-4">
-                  {{ bmiCalculation.massage }}
-                </div>
-              </div>
-              <div :class="bmiCalculation.classes" class="d-flex align-items-center fs-1 fw-bold rounded-3 px-2">
-                {{ bmiCalculation.value }}
-              </div>
-            </div>
-            <div v-else class="fs-5">
-              Proszę uzupełnić wartości.
-            </div>
-
-        </div> -->
       </div>
     </div>
   </div>
@@ -94,7 +66,7 @@ export default {
     exchangeResult: function () {
       let found = {... this.currencies.find(currency => currency.code === this.currencyOut)};
 
-      return this.value / found.bid;//found.bid * this.target.value;
+      return this.value / found.bid;
     }
   },
   mounted () {
